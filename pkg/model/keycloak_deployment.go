@@ -314,6 +314,11 @@ func KeycloakDeploymentReconciled(cr *v1alpha1.Keycloak, currentState *v13.State
 						},
 					},
 				},
+				// When running Keycloak behind a proxy, you will need to enable proxy address forwarding
+				{
+					Name:  "PROXY_ADDRESS_FORWARDING",
+					Value: "true",
+				},
 			},
 		},
 	}
